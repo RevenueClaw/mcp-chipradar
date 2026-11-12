@@ -31,6 +31,10 @@ Get a free key instantly at [chipradar.io/api/keys](https://chipradar.io/api/key
 (no approval). Paid tiers unlock higher rate limits and features such as
 90-day price history and LLM benchmarks.
 
+Prefer marketplace billing? The API is also listed on
+[RapidAPI](https://rapidapi.com/RevenueClaw/api/chipradar-ai-compute-hardware-pricing-api1)
+with matching BASIC/PRO/ULTRA/MEGA plans.
+
 | Tier | Price | Monthly cap | Per-minute | Unlocks |
 |---|---|---|---|---|
 | **Sandbox / Free** | `$0/mo` | 100 | 5 | current deals, basic specs |
