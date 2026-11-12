@@ -1,0 +1,36 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "maintainers": ["RevenueClaw"],
+  "name": "mcp-chipradar",
+  "description": "MCP server for the ChipRadar hardware-pricing API: SBCs, mini PCs, vendor prices, deal scores, restock alerts, and LLM-on-board benchmarks.",
+  "type": "mcp_server",
+  "status": "beta",
+  "framework": "FastMCP",
+  "transport": ["stdio"],
+  "tools": 4,
+  "keywords": [
+    "chipradar",
+    "mcp",
+    "hardware",
+    "sbc",
+    "mini-pc",
+    "pricing",
+    "deals",
+    "restock-alerts",
+    "llm-benchmarks",
+    "single-board-computer"
+  ],
+  "features": {
+    "public_demo_mode": {
+      "enabled": true,
+      "description": "Runs keyless and returns public demo data from https://chipradar.io/api/products/current plus registration instructions."
+    },
+    "api_tiers": {
+      "description": "Four usage tiers: $0/100/mo (Sandbox), $12/5k/mo (Indie), $49/50k/mo (Pro), $199/250k+/mo (Enterprise)."
+    }
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://chipradar.io/developers",
+  "repository": "https://github.com/RevenueClaw/chipradar",
+  "issues": "https://github.com/RevenueClaw/chipradar/issues"
+}

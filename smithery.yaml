@@ -1,0 +1,32 @@
+# Smithery.ai configuration for mcp-chipradar
+# Repository: https://github.com/RevenueClaw/chipradar
+# Package: mcp-chipradar/
+
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required: []
+    properties:
+      chipradarApiKey:
+        type: string
+        description: |
+          ChipRadar API key (sk_cr_...).
+          Omit for demo mode, but live tools require a key.
+          Get a free key instantly at https://chipradar.io/api/keys.
+      chipradarApiBase:
+        type: string
+        default: "https://chipradar.io/api/v1"
+        description: |
+          ChipRadar B2B API base URL. Override only for local testing.
+  commandFunction: |
+    (config) => ({
+      command: "python",
+      args: ["-m", "mcp_chipradar.server"],
+      env: {
+        ...(config.chipradarApiKey ? { CHIPRADAR_API_KEY: config.chipradarApiKey } : {}),
+        ...(config.chipradarApiBase ? { CHIPRADAR_API_BASE: config.chipradarApiBase } : {})
+      }
+    })
+  exampleConfig:
+    chipradarApiBase: "https://chipradar.io/api/v1"
