@@ -1,4 +1,5 @@
 # mcp-chipradar
+<!-- mcp-name: io.github.RevenueClaw/mcp-chipradar -->
 
 A Model Context Protocol (MCP) server that turns the [ChipRadar](https://chipradar.io)
 hardware-pricing API into LLM tools. Query single-board computers, mini PCs,
