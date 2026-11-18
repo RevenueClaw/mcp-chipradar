@@ -13,13 +13,11 @@ demo data and clear setup instructions so registry reviewers can test it in a
 single copy-paste.
 
 ```bash
-# uv / pipx install from the repo sub-directory
-pipx install git+https://github.com/RevenueClaw/chipradar.git#subdirectory=mcp-chipradar
+# install from PyPI
+pipx install mcp-chipradar        # or: pip install mcp-chipradar
 
-# or clone and install locally
-git clone https://github.com/RevenueClaw/chipradar.git
-cd chipradar/mcp-chipradar
-pip install -e .
+# or run it with no install at all
+uvx mcp-chipradar
 ```
 
 Then add an MCP config block below. Without an API key, `get_boards` returns
