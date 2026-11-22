@@ -29,7 +29,17 @@ async def get_boards(
     brand: Optional[str] = None,
     limit: int = 20,
 ) -> str:
-    """List tracked boards with specs and current best vendor price."""
+    """List tracked boards with specs, current best vendor price, board economics
+    (memory_bandwidth_gbps, derived_bandwidth_gbps, max_q4_model_b, lifecycle_status,
+    eol_date, os_support, spec_source_url — NULL until cited), expansion + power
+    (m2_nvme_slots, has_oculink, has_usb4_thunderbolt, poe_hat_compatible, idle_watts,
+    load_watts, power_source_url — cited measured-wall values only), landed cost
+    (landed_price_usd, shipping_usd_us, psu_included, estimated_delivery_days) and
+    price analytics (price_90d_low_usd, price_90d_median_usd, price_percentile_90d
+    0=at 90d low / 100=at 90d high, stock_stability_30d 0-100%) and the Used/Secondary
+    Market floor from eBay (used_floor_usd, used_landed_floor_usd — shipping included
+    only when stated, used_condition, used_active_count, used_listing_url with EPN
+    tracking, new_vs_used_savings_pct) — Indie tier and above for used fields."""
     try:
         client = await _client()
         data = await client.get_boards(family=family, brand=brand, limit=limit)
@@ -49,7 +59,14 @@ async def get_board_history(asin: str, days: int = 30) -> str:
 
 
 async def get_deals(min_score: int = 0, limit: int = 20) -> str:
-    """Get current deals sorted by deal score."""
+    """Get current deals sorted by deal score, with landed-cost metadata,
+    measured-wall power/expansion fields and 90d buy/wait analytics
+    (price_percentile_90d: 0 = currently at the 90-day low, 100 = at the high;
+    stock_stability_30d: % of valued stock checks with any vendor in stock), plus
+    the eBay Used/Secondary Market floor (used_floor_usd, used_landed_floor_usd,
+    used_active_count, used_listing_url, new_vs_used_savings_pct) on Indie+ tiers.
+    Used prices NEVER alter the new-retail best_price/percentile fields — separate
+    layer. Unverified values are NULL, never estimated."""
     try:
         client = await _client()
         data = await client.get_deals(min_score=min_score, limit=limit)
@@ -71,7 +88,8 @@ async def get_restock_alerts(limit: int = 20) -> str:
 async def get_best_inference_provider(
     model: str, priority: str = "balanced"
 ) -> str:
-    """Recommend the best cloud inference provider for a model.
+    """Pick the fastest / most reliable OpenRouter cloud provider for a model in
+    real time, from live TTFT / tok/s / uptime scorecards.
 
     Args:
         model: ChipRadar inference model slug, e.g. "llama-3-8b".
@@ -88,7 +106,8 @@ async def get_best_inference_provider(
 async def calculate_cloud_vs_local_breakeven(
     daily_tokens: int, model: str
 ) -> str:
-    """Compare cloud inference cost vs buying a local board.
+    """Break-even local-hardware alternative to cloud inference: vendor-verified
+    board pricing + measured on-board throughput + power vs live cloud cost.
 
     Args:
         daily_tokens: Expected tokens generated per day.

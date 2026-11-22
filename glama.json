@@ -2,12 +2,12 @@
   "$schema": "https://glama.ai/mcp/schemas/server.json",
   "maintainers": ["RevenueClaw"],
   "name": "mcp-chipradar",
-  "description": "MCP server for the ChipRadar hardware-pricing API: SBCs, mini PCs, vendor prices, deal scores, restock alerts, and LLM-on-board benchmarks.",
+  "description": "Full-stack AI compute intelligence for agents: live OpenRouter provider scorecards (TTFT, tok/s, uptime) + cloud-vs-local break-even against vendor-verified SBC/mini-PC pricing, deal scores, and restock alerts — one MCP server to pick the best cloud route now or price owning the hardware.",
   "type": "mcp_server",
   "status": "beta",
   "framework": "FastMCP",
   "transport": ["stdio"],
-  "tools": 4,
+  "tools": 6,
   "keywords": [
     "chipradar",
     "mcp",
@@ -18,15 +18,18 @@
     "deals",
     "restock-alerts",
     "llm-benchmarks",
+    "cloud-vs-local",
+    "openrouter-scorecards",
+    "compute-economics",
     "single-board-computer"
   ],
   "features": {
     "public_demo_mode": {
       "enabled": true,
-      "description": "Runs keyless and returns public demo data from https://chipradar.io/api/products/current plus registration instructions."
+      "description": "Runs keyless as a preview of the Free tier: returns public demo data from https://chipradar.io/api/products/current plus registration instructions."
     },
     "api_tiers": {
-      "description": "Four usage tiers: $0/100/mo (Sandbox), $12/5k/mo (Indie), $49/50k/mo (Pro), $199/250k+/mo (Enterprise)."
+      "description": "Four usage tiers, one key unlocking both REST and MCP: $0/100/mo (Sandbox, keyless preview), $12/5k/mo (Indie, live provider scorecard), $49/50k/mo (Pro, restock webhooks), $199/250k+/mo (Enterprise, SLA scorecards + on-request probing)."
     }
   },
   "license": "Apache-2.0",

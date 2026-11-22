@@ -2,18 +2,18 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.RevenueClaw/mcp-chipradar",
   "title": "ChipRadar",
-  "description": "Live hardware prices, LLM benchmarks, and probe-measured OpenRouter door price/speed.",
+  "description": "Live OpenRouter routing scorecards plus hardware pricing and cloud-vs-local break-even for agents.",
   "websiteURL": "https://chipradar.io",
   "repository": {
     "url": "https://github.com/RevenueClaw/mcp-chipradar",
     "source": "github"
   },
-  "version": "0.2.2",
+  "version": "0.3.1",
   "packages": [
     {
       "registryType": "pypi",
       "identifier": "mcp-chipradar",
-      "version": "0.2.2",
+      "version": "0.3.1",
       "transport": {
         "type": "stdio"
       }

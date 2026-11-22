@@ -2,9 +2,12 @@
 <!-- mcp-name: io.github.RevenueClaw/mcp-chipradar -->
 
 A Model Context Protocol (MCP) server that turns the [ChipRadar](https://chipradar.io)
-hardware-pricing API into LLM tools. Query single-board computers, mini PCs,
-vendor prices, deal scores, restock alerts, and LLM-on-board benchmarks directly
-from Claude, Cursor, OpenClaw / RockClaw, n8n, or any MCP host.
+full-stack AI compute intelligence API into LLM tools. Agents use one server both to
+pick the fastest / most reliable OpenRouter cloud provider in real time (live TTFT,
+tok/s, uptime scorecards) **and** to calculate the break-even local hardware
+alternative — vendor-verified SBC/mini-PC prices, deal scores, restock alerts, and
+measured LLM-on-board benchmarks. Works from Claude, Cursor, OpenClaw / RockClaw, n8n,
+or any MCP host.
 
 ## Quickstart (no API key needed)
 
@@ -13,11 +16,13 @@ demo data and clear setup instructions so registry reviewers can test it in a
 single copy-paste.
 
 ```bash
-# install from PyPI
-pipx install mcp-chipradar        # or: pip install mcp-chipradar
-
-# or run it with no install at all
+# PyPI (recommended)
+pip install mcp-chipradar
+# or zero-install via uv
 uvx mcp-chipradar
+
+# from the repo sub-directory
+pipx install git+https://github.com/RevenueClaw/chipradar.git#subdirectory=mcp-chipradar
 ```
 
 Then add an MCP config block below. Without an API key, `get_boards` returns
@@ -31,7 +36,7 @@ Get a free key instantly at [chipradar.io/api/keys](https://chipradar.io/api/key
 90-day price history and LLM benchmarks.
 
 Prefer marketplace billing? The API is also listed on
-[RapidAPI](https://rapidapi.com/RevenueClaw/api/chipradar-ai-compute-hardware-pricing-api1)
+[RapidAPI](https://rapidapi.com/RevenueClaw/api/chipradar-ai-compute-and-hardware-pricing)
 with matching BASIC/PRO/ULTRA/MEGA plans.
 
 | Tier | Price | Monthly cap | Per-minute | Unlocks |
@@ -39,7 +44,7 @@ with matching BASIC/PRO/ULTRA/MEGA plans.
 | **Sandbox / Free** | `$0/mo` | 100 | 5 | current deals, basic specs |
 | **Indie / Builder** | `$12/mo` | 5,000 | 30 | 90-day history, MCP access, **LLM benchmarks** |
 | **Pro / Growth** | `$49/mo` | 50,000 | 120 | full history, restock webhooks |
-| **Enterprise / Supply Chain** | `$199/mo` | 250,000+ | 600 | bulk exports, priority webhooks, custom SKUs |
+| **Enterprise / Supply Chain** | `$199/mo` | 250,000+ | 600 | bulk exports, webhooks, custom SKUs |
 
 Set these environment variables wherever you run the server:
 
