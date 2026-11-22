@@ -29,7 +29,7 @@
       "description": "Runs keyless as a preview of the Free tier: returns public demo data from https://chipradar.io/api/products/current plus registration instructions."
     },
     "api_tiers": {
-      "description": "Four usage tiers, one key unlocking both REST and MCP: $0/100/mo (Sandbox, keyless preview), $12/5k/mo (Indie, live provider scorecard), $49/50k/mo (Pro, restock webhooks), $199/250k+/mo (Enterprise, SLA scorecards + on-request probing)."
+      "description": "Four usage tiers, one key unlocking both REST and MCP: $0/100/mo (Sandbox, keyless preview), $12/5k/mo (Indie, live provider scorecard), $49/50k/mo (Pro, restock + provider-degradation webhooks), $199/250k+/mo (Enterprise, SLA scorecards + on-request probing)."
     }
   },
   "license": "Apache-2.0",

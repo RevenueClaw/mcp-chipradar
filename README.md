@@ -43,7 +43,7 @@ with matching BASIC/PRO/ULTRA/MEGA plans.
 |---|---|---|---|---|
 | **Sandbox / Free** | `$0/mo` | 100 | 5 | current deals, basic specs |
 | **Indie / Builder** | `$12/mo` | 5,000 | 30 | full REST + MCP (one key), **live OpenRouter provider scorecard (TTFT, tok/s, uptime)**, 90-day unified history |
-| **Pro / Growth** | `$49/mo` | 50,000 | 120 | full history, restock webhooks (cloud-degradation alerts coming soon), metered overages |
+| **Pro / Growth** | `$49/mo` | 50,000 | 120 | full history, restock + provider-degradation webhooks, metered overages |
 | **Enterprise / Supply Chain** | `$199/mo` | 250,000+ | 600 | high-cadence probing + exec reliability reports (on request upon activation), custom model/route & SKU SLA scorecards, bulk exports, webhooks |
 
 Set these environment variables wherever you run the server:
