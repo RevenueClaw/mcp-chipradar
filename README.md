@@ -1,5 +1,6 @@
 # mcp-chipradar
 <!-- mcp-name: io.github.RevenueClaw/mcp-chipradar -->
+[![RevenueClaw/mcp-chipradar MCP server](https://glama.ai/mcp/servers/RevenueClaw/mcp-chipradar/badges/score.svg)](https://glama.ai/mcp/servers/RevenueClaw/mcp-chipradar)
 
 A Model Context Protocol (MCP) server that turns the [ChipRadar](https://chipradar.io)
 full-stack AI compute intelligence API into LLM tools. Agents use one server both to
